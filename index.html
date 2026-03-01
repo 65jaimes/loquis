@@ -415,7 +415,7 @@
                     if (numSorpresa === 20) {
                         finalAlcanzado = true;
                         iniciarBucleFinal();
-                        descargarCarta();
+                        mostrarBotonFinal();
                     } else {
                         document.getElementById("nota").innerHTML =
                             "¡SORPRESA " + numSorpresa + "/20! 🎁";
@@ -432,7 +432,7 @@
                 setInterval(() => {
                     nota.innerHTML =
                         nota.innerHTML === "¡SORPRESA 20/20! 🎁"
-                            ? "¡TÓCAME PARA DESCARGAR! ❤️📖"
+                            ? "¡MIRA TU REGALO FINAL! ❤️📖"
                             : "¡SORPRESA 20/20! 🎁";
                     nota.style.color =
                         nota.style.color === "rgb(160, 32, 240)"
@@ -448,6 +448,27 @@
                     caja.style.display = "none";
                 }, 800);
             }
+function mostrarBotonFinal() {
+    const btn = document.createElement("button");
+    btn.innerHTML = "¡Has encontrado el Tesoro del Acuario! ❤️";
+    btn.style.position = "fixed";
+    btn.style.bottom = "20px";
+    btn.style.left = "50%";
+    btn.style.transform = "translateX(-50%)";
+    btn.style.padding = "15px 25px";
+    btn.style.backgroundColor = "#ff4d4d";
+    btn.style.color = "white";
+    btn.style.border = "none";
+    btn.style.borderRadius = "25px";
+    btn.style.fontSize = "18px";
+    btn.style.zIndex = "1000";
+    btn.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+    btn.onclick = function() {
+        window.open("https://drive.google.com/file/d/1aYtEnIT12GYzBeK97RCvV4K1HNYxv19K/view?usp=sharing", "_blank");
+    };
+    document.body.appendChild(btn);
+}
+
         </script>
     </body>
 </html>
